@@ -1,9 +1,13 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 const error = document.querySelectorAll('.error')[0];
 document.getElementById("login-form").addEventListener('submit', async (e)=>{
     e.preventDefault();
     const user = e.target.children.user.value;
     const password = e.target.children.password.value;
-    const res = await fetch("http://localhost:4000/api/login",{
+    const url = "https://proyectosession-2.onrender.com/:"+process.env.PORT
+    const res = await fetch(url+"/api/login",{
         method:"POST",
         headers:{
             "Content-Type": "application/json",
