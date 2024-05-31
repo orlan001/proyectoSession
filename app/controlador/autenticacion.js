@@ -58,7 +58,7 @@ async function registro(req, res){
         user, email, password:hashPasword
     }   
     usuarios.push(nuevoUsuario);
-    console.log(usuarigit os);
+    //console.log(usuarios);
     return res.status(201).send({status:"ok", message:"el usuario ha sido registrado", redirect:"/"})
 }
 //exportar funciones
