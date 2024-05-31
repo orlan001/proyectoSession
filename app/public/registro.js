@@ -1,9 +1,8 @@
 const error = document.querySelectorAll('.error')[0];
 document.getElementById('registro-form').addEventListener('submit', async (e)=>{
     e.preventDefault();
-    console.log(e.target.children.user.value);
     //const res = await fetch("http://localhost:4000/api/registro",{
-    const res = await fetch("/api/registro",{
+    const res = await fetch(`/api/registro`,{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
