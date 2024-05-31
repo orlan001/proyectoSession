@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <script defer src="login.js"></script>
+</head>
+<body>
+
+    <main>
+        <div class="form-contenedor">
+            <h1>Iniciar Sesion</h1>
+            
+            <figure class="figure">
+                <img src="carwashblue1.png" alt="imagen lavado de auto" class="logo">
+            </figure>
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+                <p class="mensaje-parrafo-sesion">Ingresa tus credenciales para acceder al Area de Administracion...</p>
+            </marquee> 
+            <form action="" id="login-form">
+                <label for="usuario" class="sr-only">User</label>
+                <input type="text" name="user" id="user" placeholder="Usuario">
+                <label for="password" class="sr-only">Contraseña</label>
+                <input type="text" name="password" id="password" placeholder="Contraseña">
+                <button type="submit">Iniciar sesion</button>
+                <p class="error escondido">Error al Iniciar Sesion</p>
+            </form>
+            <p>¿Todavia no tienes una Cuenta?  <a href="/registro">Registrate</a></p>
+        </div>
+    </main>
+
+</body>
+</html>
