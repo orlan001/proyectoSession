@@ -13,12 +13,13 @@ async function login(req, res){
     //console.log(req.body)
     const user = req.body.user;
     const password = req.body.password;
+    
     if(!user || !password){
         return  res.status(400).send({status:"error", message: "datos ingresados incompletos.."});
     }
     
-    const usuarioVerificar = usuarios.find(usuario => usuario.user === user)
-    console.log(usuarioVerificar)
+    const usuarioVerificar = usuarios.find(usuario => (usuario.user === req.body.user.trim()))
+    
 
     if(!usuarioVerificar){
         return res.status(400).send({status:"error", message:"Error durante el Login"})
@@ -32,6 +33,7 @@ async function login(req, res){
         process.env.JWT_SECRET,
         {expiresIn:process.env.JWT_EXPIRE}
     )
+    
     const cookieOpcion = {
         expires: new Date(Date.now() + process.env.JWT_COOKIE * 24 * 60 * 60 * 1000),
         path:'/'
@@ -43,6 +45,7 @@ async function login(req, res){
 async function registro(req, res){
     //console.log(req.body)
     const user = req.body.user;
+    
     const password = req.body.password;
     const email = req.body.email;
     if(!user || !password || !email){

@@ -13,7 +13,7 @@ document.getElementById("login-form").addEventListener('submit', async (e)=>{
             user, password
         })
     });
-   console.log(res);
+
     if(!res.ok) return error.classList.toggle('escondido', false);
     const resJson = await res.json();
     if(resJson.redirect){
